@@ -21,15 +21,15 @@ class LoginScreenController: UIViewController {
         
         txtUsername.layer.borderWidth = 1
         txtUsername.layer.borderColor = UIColor.white.cgColor
-        txtUsername.layer.cornerRadius = 20
+        txtUsername.layer.cornerRadius = 5
         txtUsername.clipsToBounds = true
         
         txtPassword.layer.borderWidth = 1
         txtPassword.layer.borderColor = UIColor.white.cgColor
-        txtPassword.layer.cornerRadius = 20
+        txtPassword.layer.cornerRadius = 5
         txtPassword.clipsToBounds = true
 
-        btnLogin.layer.cornerRadius = 20
+        btnLogin.layer.cornerRadius = 5
         btnLogin.clipsToBounds = true
         
         // Do any additional setup after loading the view.

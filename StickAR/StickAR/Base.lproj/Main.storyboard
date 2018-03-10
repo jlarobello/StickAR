@@ -49,10 +49,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-Z7-dR6">
-                                <rect key="frame" x="20" y="585" width="794" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-Z7-dR6">
+                                <rect key="frame" x="20" y="20" width="794" height="75"/>
                                 <color key="backgroundColor" red="0.34199542869999999" green="0.66666668650000005" blue="0.60308152029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="rWe-Bl-xt9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Import Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,14 +63,18 @@
                                     <action selector="importImage:" destination="ld3-YX-l4d" eventType="touchUpInside" id="mZa-Tj-4kR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-zm-fs1">
-                                <rect key="frame" x="20" y="20" width="794" height="547"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-zm-fs1">
+                                <rect key="frame" x="20" y="103" width="794" height="327"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="327" id="Ban-r9-jD6"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-sk-u3F">
-                                <rect key="frame" x="20" y="711" width="794" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-sk-u3F">
+                                <rect key="frame" x="20" y="438" width="794" height="74"/>
                                 <color key="backgroundColor" red="1" green="0.4348977819" blue="0.50831777050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="u5C-q9-VIQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Generate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,6 +83,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="qKB-Z7-dR6" secondAttribute="trailing" constant="20" id="CnI-YE-vGv"/>
+                            <constraint firstItem="6Gx-sk-u3F" firstAttribute="top" secondItem="xcV-zm-fs1" secondAttribute="bottom" constant="8" id="Dlc-SK-BB6"/>
+                            <constraint firstItem="6Gx-sk-u3F" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="Mu3-cN-mdk"/>
+                            <constraint firstItem="qKB-Z7-dR6" firstAttribute="top" secondItem="Lj3-sr-oQu" secondAttribute="top" id="U4y-jh-JIs"/>
+                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="6Gx-sk-u3F" secondAttribute="trailing" constant="20" id="Ud4-GS-Wh1"/>
+                            <constraint firstItem="xcV-zm-fs1" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="jnE-Z0-cGI"/>
+                            <constraint firstItem="qKB-Z7-dR6" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="q8h-um-sMX"/>
+                            <constraint firstItem="xcV-zm-fs1" firstAttribute="top" secondItem="qKB-Z7-dR6" secondAttribute="bottom" constant="8" id="smO-3U-at1"/>
+                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="xcV-zm-fs1" secondAttribute="trailing" constant="20" id="vyR-aD-ZHu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Lj3-sr-oQu"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ZCy-2f-o0U" appends="YES" id="5Cc-BS-KBc"/>
@@ -103,7 +120,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hacker-internet-technology-computers-159195" translatesAutoresizingMaskIntoConstraints="NO" id="gFu-CB-gMQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer_with_stickers_blur" translatesAutoresizingMaskIntoConstraints="NO" id="gFu-CB-gMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -112,27 +129,25 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6vP-Xf-nOh">
                                         <rect key="frame" x="8" y="21" width="778" height="61"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="0.7049405809859155" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="61" id="Xtx-4Q-YSE"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnG-pk-XeM">
                                         <rect key="frame" x="8" y="101" width="778" height="61"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="0.70053917253521125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="61" id="ERj-Di-9nd"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtw-lV-F3A">
                                         <rect key="frame" x="8" y="183" width="778" height="59"/>
-                                        <color key="backgroundColor" red="0.34199542869999999" green="0.66666668650000005" blue="0.60308152029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.32788719574762637" green="0.67624956369400024" blue="0.41880631566193915" alpha="0.701446963028169" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="YKc-hW-e20"/>
                                         </constraints>
@@ -160,11 +175,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to StickAR!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lu-6C-U9W">
-                                <rect key="frame" x="20" y="333" width="794" height="74"/>
+                                <rect key="frame" x="20" y="389" width="794" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="VTX-Th-KlH"/>
+                                    <constraint firstAttribute="height" constant="28" id="6wQ-W7-QIg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -174,14 +189,14 @@
                             <constraint firstItem="gFu-CB-gMQ" firstAttribute="bottom" secondItem="Zko-eW-f1G" secondAttribute="bottom" id="7sn-ir-hvt"/>
                             <constraint firstItem="gFu-CB-gMQ" firstAttribute="top" secondItem="1Qu-Dm-BsT" secondAttribute="top" id="AH8-8i-FyO"/>
                             <constraint firstItem="gFu-CB-gMQ" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" id="Eya-mT-V44"/>
+                            <constraint firstItem="fmq-D4-Mgm" firstAttribute="top" secondItem="5Lu-6C-U9W" secondAttribute="bottom" constant="8" id="IVi-8T-HfG"/>
                             <constraint firstItem="fmq-D4-Mgm" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" constant="20" id="M7T-qf-pnf"/>
                             <constraint firstItem="Zko-eW-f1G" firstAttribute="trailing" secondItem="fmq-D4-Mgm" secondAttribute="trailing" constant="20" id="Prc-il-hF5"/>
                             <constraint firstItem="fmq-D4-Mgm" firstAttribute="centerY" secondItem="1Qu-Dm-BsT" secondAttribute="centerY" id="TNS-GA-n8Q"/>
+                            <constraint firstItem="Zko-eW-f1G" firstAttribute="trailing" secondItem="5Lu-6C-U9W" secondAttribute="trailing" constant="20" id="UYQ-Un-DS1"/>
                             <constraint firstItem="fmq-D4-Mgm" firstAttribute="centerX" secondItem="1Qu-Dm-BsT" secondAttribute="centerX" id="X2c-CY-fxa"/>
-                            <constraint firstItem="Zko-eW-f1G" firstAttribute="trailing" secondItem="5Lu-6C-U9W" secondAttribute="trailing" constant="20" id="bKl-IZ-O77"/>
                             <constraint firstItem="gFu-CB-gMQ" firstAttribute="trailing" secondItem="Zko-eW-f1G" secondAttribute="trailing" id="fLR-fr-l1w"/>
-                            <constraint firstItem="fmq-D4-Mgm" firstAttribute="top" secondItem="5Lu-6C-U9W" secondAttribute="bottom" constant="18" id="kdR-Uf-Q7j"/>
-                            <constraint firstItem="5Lu-6C-U9W" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" constant="20" id="sNa-mj-TOg"/>
+                            <constraint firstItem="5Lu-6C-U9W" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" constant="20" id="fyC-l8-GPN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zko-eW-f1G"/>
                     </view>
@@ -193,13 +208,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEd-mA-bkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-604" y="161"/>
+            <point key="canvasLocation" x="-604.31654676258995" y="160.79136690647482"/>
         </scene>
     </scenes>
     <resources>
-        <image name="hacker-internet-technology-computers-159195" width="2000" height="1330"/>
+        <image name="computer_with_stickers_blur" width="2000" height="1330"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="55o-RR-FR8"/>
+        <segue reference="F5L-BH-fhc"/>
     </inferredMetricsTieBreakers>
 </document>
