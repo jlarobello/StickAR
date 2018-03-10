@@ -11,6 +11,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var detectedDataAnchor: ARAnchor?
     var processing = false
+    var restarted = true
     var payload: String!
     var lastPayload: String!
     var payloadList: [String] = []
@@ -88,30 +89,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 DispatchQueue.main.async {
                     
                     // Perform a hit test on the ARFrame to find a surface
-                    let hitTestResults = frame.hitTest(center, types: [.featurePoint/*, .estimatedHorizontalPlane, .existingPlane, .existingPlaneUsingExtent*/] )
-                    
+                    let hitTestResults = frame.hitTest(center, types: [.featurePoint] )
+                    print(hitTestResults)
                     // If we have a result, process it
                     if let hitTestResult = hitTestResults.first {
-                        
-                        // If we already have an anchor, update the position of the attached node
-                        /*     if(!changed){
-                         if let detectedDataAnchor = self.detectedDataAnchor,
-                         let node = self.sceneView.node(for: detectedDataAnchor) {
-                         //node.transform = SCNMatrix4(hitTestResult.worldTransform)
-                         }else {
-                         // Detect the first marker
-                         self.detectedDataAnchor = ARAnchor(transform: hitTestResult.worldTransform)
-                         self.sceneView.session.add(anchor: self.detectedDataAnchor!)
-                         }
-                         
-                         } else {*/
-                        if(!self.payloadList.contains(self.payload)){
+                        //print(self.payload)
+                            if(!self.payloadList.contains(self.payload)){
+                            //print("anchor created")
                             // Create an anchor. The node will be created in delegate methods
                             self.detectedDataAnchor = ARAnchor(transform: hitTestResult.worldTransform)
+                            //print(self.detectedDataAnchor)
                             self.sceneView.session.add(anchor: self.detectedDataAnchor!)
-                        }
+                            }
+                            
+
                         
-                        //               }
                     }
                     
                     // Set processing flag off
@@ -148,10 +140,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         print("rendering")
         // If this is our anchor, create a node
         if self.detectedDataAnchor?.identifier == anchor.identifier {
-            
-            print(self.payload)
-            self.payloadList.append(self.payload)
-            
             let scene = SCNScene()
             let wrapperNode = SCNNode()
             var scale: CGFloat = 0
@@ -251,6 +239,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 
             }
             
+            self.payloadList.append(self.payload)
+            
+            
+            
             return wrapperNode
             
         }
@@ -279,6 +271,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let alertPrompt = UIAlertController(title: "Erase all stickers?", message: "", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
+            self.sceneView.session.pause()
+            
             self.sceneView.scene.rootNode.enumerateChildNodes { (node, stop) -> Void in
                 if let name = node.name {
                     if(self.payloadList.contains(name)) {
@@ -291,9 +285,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 }
             }
             
-            
-            self.payloadList = []
-
+            //self.sceneView.session.pause()
+            self.payloadList.removeAll()
+            let configuration = ARWorldTrackingConfiguration()
+            configuration.planeDetection = .horizontal
+            self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             
         })
         
