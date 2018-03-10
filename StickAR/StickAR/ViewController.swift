@@ -20,8 +20,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap))
-        view.addGestureRecognizer(tap)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.handleTap))
+        view.addGestureRecognizer(longPress)
         
         // Set the view's delegate
         sceneView.delegate = self
