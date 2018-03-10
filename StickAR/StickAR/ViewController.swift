@@ -87,15 +87,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 // Go back to the main thread
                 DispatchQueue.main.async {
                     
-                    var changed: Bool
                     // Perform a hit test on the ARFrame to find a surface
                     let hitTestResults = frame.hitTest(center, types: [.featurePoint/*, .estimatedHorizontalPlane, .existingPlane, .existingPlaneUsingExtent*/] )
-                    
-                    if(self.payload != self.lastPayload) {
-                        changed = true
-                    }else {
-                        changed = false
-                    }
                     
                     // If we have a result, process it
                     if let hitTestResult = hitTestResults.first {
@@ -316,24 +309,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         present(alertPrompt, animated: true, completion: nil)
     }
     
-    func httpPost(jsonData: Data) {
-        
-        let url = URL(string: "http://stickar.diblii.com/upload?=chris")!
-        if !jsonData.isEmpty {
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.httpBody = jsonData
-            
-            URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
-                NSLog("open tasks: \(openTasks)")
-            }
-            
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (responseData: Data?, response: URLResponse?, error: Error?) in
-                NSLog("\(response)")
-            })
-            task.resume()
-        }
-    }
     /*
      func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
      guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
