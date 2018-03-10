@@ -16,6 +16,13 @@ class LoginScreenController: UIViewController {
     
     @IBOutlet weak var btnLogin: UIButton!
     
+    @IBAction func loginTapped(_ sender: Any) {
+        
+        let mainNavigationController = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
+        
+        present(mainNavigationController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

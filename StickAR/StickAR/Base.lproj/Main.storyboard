@@ -18,13 +18,14 @@
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController storyboardIdentifier="ARCamera" id="BV1-FR-VrT" customClass="ViewController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="ViewController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="rZL-Gf-GOU" appends="YES" id="taQ-Jf-LKN"/>
+                            <outletCollection property="gestureRecognizers" destination="Gpk-3L-Equ" appends="YES" id="sm7-BH-Ukd"/>
                         </connections>
                     </arscnView>
                     <navigationItem key="navigationItem" id="txn-Lf-aZt"/>
@@ -35,22 +36,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer cancelsTouchesInView="NO" direction="left" id="rZL-Gf-GOU">
                     <connections>
-                        <segue destination="ld3-YX-l4d" kind="show" identifier="QRCodeGeneratorSegue" action="showDetailViewController:sender:" id="Dsd-Sq-KHf"/>
+                        <segue destination="ld3-YX-l4d" kind="show" id="7tB-Oy-As2"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="Gpk-3L-Equ">
+                    <connections>
+                        <segue destination="gP5-qP-Sum" kind="show" id="ldU-2K-7AC"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-604" y="877"/>
+            <point key="canvasLocation" x="-451.79856115107918" y="876.79856115107918"/>
         </scene>
         <!--QR Code Generator-->
         <scene sceneID="F6S-jE-r2K">
             <objects>
-                <viewController storyboardIdentifier="QRCodeGenerator" title="QR Code Generator" id="ld3-YX-l4d" customClass="QRCodeGeneratorScreen" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCodeGeneratorScreen" title="QR Code Generator" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ld3-YX-l4d" customClass="QRCodeGeneratorScreen" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qd6-8y-t3h">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-Z7-dR6">
-                                <rect key="frame" x="20" y="20" width="794" height="75"/>
+                                <rect key="frame" x="20" y="64" width="794" height="75"/>
                                 <color key="backgroundColor" red="0.34199542869999999" green="0.66666668650000005" blue="0.60308152029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="rWe-Bl-xt9"/>
@@ -64,13 +70,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-zm-fs1">
-                                <rect key="frame" x="20" y="103" width="794" height="327"/>
+                                <rect key="frame" x="20" y="147" width="794" height="327"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="327" id="Ban-r9-jD6"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-sk-u3F">
-                                <rect key="frame" x="20" y="438" width="794" height="74"/>
+                                <rect key="frame" x="20" y="482" width="794" height="74"/>
                                 <color key="backgroundColor" red="1" green="0.4348977819" blue="0.50831777050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="u5C-q9-VIQ"/>
@@ -99,23 +105,27 @@
                             <outletCollection property="gestureRecognizers" destination="ZCy-2f-o0U" appends="YES" id="5Cc-BS-KBc"/>
                         </connections>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Logout" id="0yr-r0-inN">
+                            <connections>
+                                <action selector="logoutHandler:" destination="ld3-YX-l4d" id="K7b-MP-oOl"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myImageView" destination="xcV-zm-fs1" id="r1D-54-LAG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-0K-U5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="ZCy-2f-o0U">
-                    <connections>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="ARCameraSegue" id="55o-RR-FR8"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="ZCy-2f-o0U"/>
             </objects>
-            <point key="canvasLocation" x="300.7194244604317" y="876.79856115107918"/>
+            <point key="canvasLocation" x="265.46762589928062" y="876.79856115107918"/>
         </scene>
         <!--Login Screen Controller-->
         <scene sceneID="xtt-kF-1KA">
             <objects>
-                <viewController storyboardIdentifier="Login" id="AD8-uc-ufo" customClass="LoginScreenController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreenController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AD8-uc-ufo" customClass="LoginScreenController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Qu-Dm-BsT">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +166,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BV1-FR-VrT" kind="show" id="F5L-BH-fhc"/>
+                                            <action selector="loginTapped:" destination="AD8-uc-ufo" eventType="touchUpInside" id="gCM-qV-Oo7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -208,13 +218,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEd-mA-bkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-604.31654676258995" y="160.79136690647482"/>
+            <point key="canvasLocation" x="-1315" y="98"/>
+        </scene>
+        <!--Image Gallery-->
+        <scene sceneID="X1Y-jC-wXf">
+            <objects>
+                <viewController storyboardIdentifier="ImageGalleryController" title="Image Gallery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gP5-qP-Sum" customClass="ImageGalleryController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Im-Lc-2OP">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="T1v-aC-j3a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kta-py-hlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1214" y="877"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="xaW-Af-5HM">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DXH-tK-U4X" customClass="MainNavigationController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hpm-jj-jfR">
+                        <rect key="frame" x="0.0" y="20" width="834" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="rootViewController" id="xTn-RH-dtb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZj-gy-NdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452" y="98"/>
         </scene>
     </scenes>
     <resources>
         <image name="computer_with_stickers_blur" width="2000" height="1330"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="F5L-BH-fhc"/>
-    </inferredMetricsTieBreakers>
 </document>

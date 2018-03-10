@@ -12,6 +12,10 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
 
     @IBOutlet weak var myImageView: UIImageView!
     
+    @IBAction func logoutHandler(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func importImage(_ sender: Any) {
         
         let image = UIImagePickerController()

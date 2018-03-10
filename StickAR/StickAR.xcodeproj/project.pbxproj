@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002453E320540153001B6A46 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002453E220540153001B6A46 /* MainNavigationController.swift */; };
+		002453E520540778001B6A46 /* ImageGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002453E420540778001B6A46 /* ImageGalleryController.swift */; };
 		0065F6CA2053ADB1000FBF02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065F6C92053ADB1000FBF02 /* AppDelegate.swift */; };
 		0065F6CC2053ADB1000FBF02 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 0065F6CB2053ADB1000FBF02 /* art.scnassets */; };
 		0065F6CE2053ADB1000FBF02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065F6CD2053ADB1000FBF02 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002453E220540153001B6A46 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		002453E420540778001B6A46 /* ImageGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryController.swift; sourceTree = "<group>"; };
 		0065F6C62053ADB1000FBF02 /* StickAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0065F6C92053ADB1000FBF02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0065F6CB2053ADB1000FBF02 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 		0065F6BD2053ADB1000FBF02 = {
 			isa = PBXGroup;
 			children = (
+				002453E220540153001B6A46 /* MainNavigationController.swift */,
 				0065F6C82053ADB1000FBF02 /* StickAR */,
 				0065F6C72053ADB1000FBF02 /* Products */,
 			);
@@ -64,6 +69,7 @@
 				0065F6CB2053ADB1000FBF02 /* art.scnassets */,
 				0065F6CD2053ADB1000FBF02 /* ViewController.swift */,
 				0065F6CF2053ADB1000FBF02 /* Main.storyboard */,
+				002453E420540778001B6A46 /* ImageGalleryController.swift */,
 				0065F6DF2053C2FF000FBF02 /* QRCodeGeneratorScreen.swift */,
 				0065F6D22053ADB1000FBF02 /* Assets.xcassets */,
 				0065F6D42053ADB1000FBF02 /* LaunchScreen.storyboard */,
@@ -146,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002453E320540153001B6A46 /* MainNavigationController.swift in Sources */,
 				0065F6CE2053ADB1000FBF02 /* ViewController.swift in Sources */,
+				002453E520540778001B6A46 /* ImageGalleryController.swift in Sources */,
 				0065F6CA2053ADB1000FBF02 /* AppDelegate.swift in Sources */,
 				0065F6DE2053AE20000FBF02 /* LoginScreenController.swift in Sources */,
 				0065F6E02053C2FF000FBF02 /* QRCodeGeneratorScreen.swift in Sources */,
