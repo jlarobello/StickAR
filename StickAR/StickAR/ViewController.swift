@@ -282,15 +282,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             self.sceneView.scene.rootNode.enumerateChildNodes { (node, stop) -> Void in
                 if let name = node.name {
                     if(self.payloadList.contains(name)) {
+                        if(node.childNodes.count > 0) {
+                            node.childNodes[node.childNodes.count-1].removeFromParentNode()
+                        }
+                    }else {
                         node.removeFromParentNode()
                     }
                 }
             }
+            
+            
             self.payloadList = []
-            
-        
-            
-            
+
             
         })
         
