@@ -55,12 +55,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-Z7-dR6">
-                                <rect key="frame" x="20" y="64" width="794" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-Z7-dR6">
+                                <rect key="frame" x="70" y="729" width="187" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.34199542869999999" green="0.66666668650000005" blue="0.60308152029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="rWe-Bl-xt9"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Import Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,18 +67,20 @@
                                     <action selector="importImage:" destination="ld3-YX-l4d" eventType="touchUpInside" id="mZa-Tj-4kR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-zm-fs1">
-                                <rect key="frame" x="20" y="147" width="794" height="327"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6Y-U9-oNy">
+                                <rect key="frame" x="20" y="93" width="794" height="463"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="327" id="Ban-r9-jD6"/>
+                                    <constraint firstAttribute="height" constant="463" id="1QO-CE-5KY"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-sk-u3F">
-                                <rect key="frame" x="20" y="482" width="794" height="74"/>
+                                <state key="normal" image="walle"/>
+                                <connections>
+                                    <action selector="btnFlip:" destination="ld3-YX-l4d" eventType="touchUpInside" id="uaC-l5-Jlu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-sk-u3F">
+                                <rect key="frame" x="579" y="729" width="131" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.4348977819" blue="0.50831777050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="u5C-q9-VIQ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Generate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,15 +90,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="qKB-Z7-dR6" secondAttribute="trailing" constant="20" id="CnI-YE-vGv"/>
-                            <constraint firstItem="6Gx-sk-u3F" firstAttribute="top" secondItem="xcV-zm-fs1" secondAttribute="bottom" constant="8" id="Dlc-SK-BB6"/>
-                            <constraint firstItem="6Gx-sk-u3F" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="Mu3-cN-mdk"/>
-                            <constraint firstItem="qKB-Z7-dR6" firstAttribute="top" secondItem="Lj3-sr-oQu" secondAttribute="top" id="U4y-jh-JIs"/>
-                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="6Gx-sk-u3F" secondAttribute="trailing" constant="20" id="Ud4-GS-Wh1"/>
-                            <constraint firstItem="xcV-zm-fs1" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="jnE-Z0-cGI"/>
-                            <constraint firstItem="qKB-Z7-dR6" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="q8h-um-sMX"/>
-                            <constraint firstItem="xcV-zm-fs1" firstAttribute="top" secondItem="qKB-Z7-dR6" secondAttribute="bottom" constant="8" id="smO-3U-at1"/>
-                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="xcV-zm-fs1" secondAttribute="trailing" constant="20" id="vyR-aD-ZHu"/>
+                            <constraint firstItem="t6Y-U9-oNy" firstAttribute="top" secondItem="Lj3-sr-oQu" secondAttribute="top" constant="29" id="EXg-Ca-i6T"/>
+                            <constraint firstItem="t6Y-U9-oNy" firstAttribute="leading" secondItem="Lj3-sr-oQu" secondAttribute="leading" constant="20" id="ZLc-7v-rgO"/>
+                            <constraint firstItem="Lj3-sr-oQu" firstAttribute="trailing" secondItem="t6Y-U9-oNy" secondAttribute="trailing" constant="20" id="rpB-06-fqz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lj3-sr-oQu"/>
                         <connections>
@@ -114,7 +108,7 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="myImageView" destination="xcV-zm-fs1" id="r1D-54-LAG"/>
+                        <outlet property="btnCard" destination="t6Y-U9-oNy" id="g0B-XZ-HzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-0K-U5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -256,5 +250,6 @@
     </scenes>
     <resources>
         <image name="computer_with_stickers_blur" width="2000" height="1330"/>
+        <image name="walle" width="1280" height="853"/>
     </resources>
 </document>

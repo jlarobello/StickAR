@@ -157,12 +157,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             var scale: CGFloat = 0
             var height: CGFloat = 0
             var width: CGFloat = 0
-            let imageExtensions = ["png", "jpg", "gif"]
+            let imageExtensions = ["png", "jpg", "jpeg", "gif"]
             //...
             // Iterate & match the URL objects from your checking results
             let imageURL = URL(string: self.payload)
-            let pathExtention = imageURL?.pathExtension
-            if imageExtensions.contains(pathExtention!)
+            let pathExtension = imageURL?.pathExtension
+            if imageExtensions.contains(pathExtension!)
             {
                 // It is a 2d image
                 // Creating a session object with the default configuration.

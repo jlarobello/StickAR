@@ -16,6 +16,23 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var btnCard: UIButton!
+    
+    var isOpen = false
+    
+    @IBAction func btnFlip(_ sender: Any) {
+        if isOpen {
+            isOpen = false
+            let image = UIImage(named: "walle")
+            btnCard.setImage(image, for: .normal)
+            UIView.transition(with: btnCard, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        } else {
+            isOpen = true
+            let image = UIImage(named: "walle_qr_code")
+            btnCard.setImage(image, for: .normal)
+            UIView.transition(with: btnCard, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        }
+    }
     @IBAction func importImage(_ sender: Any) {
         
         let image = UIImagePickerController()
