@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AD8-uc-ufo">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="161"/>
+        </scene>
+        <!--Login Screen Controller-->
+        <scene sceneID="xtt-kF-1KA">
+            <objects>
+                <viewController id="AD8-uc-ufo" customClass="LoginScreenController" customModule="StickAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Qu-Dm-BsT">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hacker-internet-technology-computers-159195" translatesAutoresizingMaskIntoConstraints="NO" id="gFu-CB-gMQ">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmq-D4-Mgm">
+                                <rect key="frame" x="20" y="425" width="794" height="262"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6vP-Xf-nOh">
+                                        <rect key="frame" x="8" y="21" width="778" height="61"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="Xtx-4Q-YSE"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnG-pk-XeM">
+                                        <rect key="frame" x="8" y="101" width="778" height="61"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="ERj-Di-9nd"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtw-lV-F3A">
+                                        <rect key="frame" x="8" y="183" width="778" height="59"/>
+                                        <color key="backgroundColor" red="0.34199542869999999" green="0.66666668650000005" blue="0.60308152029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="YKc-hW-e20"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="show" id="F5L-BH-fhc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UnG-pk-XeM" secondAttribute="trailing" constant="8" id="0hF-Ev-9ya"/>
+                                    <constraint firstItem="6vP-Xf-nOh" firstAttribute="top" secondItem="fmq-D4-Mgm" secondAttribute="top" constant="21" id="4MO-7I-JhG"/>
+                                    <constraint firstItem="Qtw-lV-F3A" firstAttribute="top" secondItem="UnG-pk-XeM" secondAttribute="bottom" constant="21" id="7Il-O4-Kwh"/>
+                                    <constraint firstAttribute="height" constant="262" id="MeF-ch-Bez"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qtw-lV-F3A" secondAttribute="trailing" constant="8" id="Pag-98-NxS"/>
+                                    <constraint firstAttribute="trailing" secondItem="6vP-Xf-nOh" secondAttribute="trailing" constant="8" id="W9n-Tp-Cn6"/>
+                                    <constraint firstItem="UnG-pk-XeM" firstAttribute="leading" secondItem="fmq-D4-Mgm" secondAttribute="leading" constant="8" id="bgN-ge-mXJ"/>
+                                    <constraint firstItem="6vP-Xf-nOh" firstAttribute="leading" secondItem="fmq-D4-Mgm" secondAttribute="leading" constant="8" id="nYX-6w-JT4"/>
+                                    <constraint firstItem="Qtw-lV-F3A" firstAttribute="leading" secondItem="fmq-D4-Mgm" secondAttribute="leading" constant="8" id="wg4-3f-y25"/>
+                                    <constraint firstItem="UnG-pk-XeM" firstAttribute="top" secondItem="6vP-Xf-nOh" secondAttribute="bottom" constant="19" id="yIv-In-C5z"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lu-6C-U9W">
+                                <rect key="frame" x="20" y="333" width="794" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="VTX-Th-KlH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gFu-CB-gMQ" firstAttribute="bottom" secondItem="Zko-eW-f1G" secondAttribute="bottom" id="7sn-ir-hvt"/>
+                            <constraint firstItem="gFu-CB-gMQ" firstAttribute="top" secondItem="1Qu-Dm-BsT" secondAttribute="top" id="AH8-8i-FyO"/>
+                            <constraint firstItem="gFu-CB-gMQ" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" id="Eya-mT-V44"/>
+                            <constraint firstItem="fmq-D4-Mgm" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" constant="20" id="M7T-qf-pnf"/>
+                            <constraint firstItem="Zko-eW-f1G" firstAttribute="trailing" secondItem="fmq-D4-Mgm" secondAttribute="trailing" constant="20" id="Prc-il-hF5"/>
+                            <constraint firstItem="fmq-D4-Mgm" firstAttribute="centerY" secondItem="1Qu-Dm-BsT" secondAttribute="centerY" id="TNS-GA-n8Q"/>
+                            <constraint firstItem="fmq-D4-Mgm" firstAttribute="centerX" secondItem="1Qu-Dm-BsT" secondAttribute="centerX" id="X2c-CY-fxa"/>
+                            <constraint firstItem="Zko-eW-f1G" firstAttribute="trailing" secondItem="5Lu-6C-U9W" secondAttribute="trailing" constant="20" id="bKl-IZ-O77"/>
+                            <constraint firstItem="gFu-CB-gMQ" firstAttribute="trailing" secondItem="Zko-eW-f1G" secondAttribute="trailing" id="fLR-fr-l1w"/>
+                            <constraint firstItem="fmq-D4-Mgm" firstAttribute="top" secondItem="5Lu-6C-U9W" secondAttribute="bottom" constant="18" id="kdR-Uf-Q7j"/>
+                            <constraint firstItem="5Lu-6C-U9W" firstAttribute="leading" secondItem="Zko-eW-f1G" secondAttribute="leading" constant="20" id="sNa-mj-TOg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zko-eW-f1G"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="Qtw-lV-F3A" id="VAB-fF-45H"/>
+                        <outlet property="txtPassword" destination="UnG-pk-XeM" id="jvI-yk-jsw"/>
+                        <outlet property="txtUsername" destination="6vP-Xf-nOh" id="LDA-kp-DeA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEd-mA-bkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-604" y="161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hacker-internet-technology-computers-159195" width="2000" height="1330"/>
+    </resources>
+</document>
