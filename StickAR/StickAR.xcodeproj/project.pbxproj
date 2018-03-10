@@ -14,6 +14,7 @@
 		0065F6D32053ADB1000FBF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0065F6D22053ADB1000FBF02 /* Assets.xcassets */; };
 		0065F6D62053ADB1000FBF02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0065F6D42053ADB1000FBF02 /* LaunchScreen.storyboard */; };
 		0065F6DE2053AE20000FBF02 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065F6DD2053AE20000FBF02 /* LoginScreenController.swift */; };
+		0065F6E02053C2FF000FBF02 /* QRCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065F6DF2053C2FF000FBF02 /* QRCodeGeneratorScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0065F6D52053ADB1000FBF02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0065F6D72053ADB1000FBF02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0065F6DD2053AE20000FBF02 /* LoginScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
+		0065F6DF2053C2FF000FBF02 /* QRCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0065F6CB2053ADB1000FBF02 /* art.scnassets */,
 				0065F6CD2053ADB1000FBF02 /* ViewController.swift */,
 				0065F6CF2053ADB1000FBF02 /* Main.storyboard */,
+				0065F6DF2053C2FF000FBF02 /* QRCodeGeneratorScreen.swift */,
 				0065F6D22053ADB1000FBF02 /* Assets.xcassets */,
 				0065F6D42053ADB1000FBF02 /* LaunchScreen.storyboard */,
 				0065F6D72053ADB1000FBF02 /* Info.plist */,
@@ -146,6 +149,7 @@
 				0065F6CE2053ADB1000FBF02 /* ViewController.swift in Sources */,
 				0065F6CA2053ADB1000FBF02 /* AppDelegate.swift in Sources */,
 				0065F6DE2053AE20000FBF02 /* LoginScreenController.swift in Sources */,
+				0065F6E02053C2FF000FBF02 /* QRCodeGeneratorScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,9 +287,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CV295WJ67P;
 				INFOPLIST_FILE = StickAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.StickAR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.att.StickAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,9 +302,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CV295WJ67P;
 				INFOPLIST_FILE = StickAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.StickAR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.att.StickAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
