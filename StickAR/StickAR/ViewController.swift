@@ -158,6 +158,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             var height: CGFloat = 0
             var width: CGFloat = 0
             let imageExtensions = ["png", "jpg", "jpeg", "gif"]
+            let modelExtensions = ["dae", "DAE", "scn"]
             //...
             // Iterate & match the URL objects from your checking results
             let imageURL = URL(string: self.payload)
@@ -184,12 +185,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                                 if let image = UIImage(data: imageData){
                                     if(image.size.width < image.size.height) {
                                         scale = image.size.width/image.size.height
-                                        height = 0.05
-                                        width = 0.05 * scale
+                                        height = 0.1
+                                        width = 0.1 * scale
                                     } else {
                                         scale = image.size.height/image.size.width
-                                        width = 0.05
-                                        height = 0.05 * scale
+                                        width = 0.1
+                                        height = 0.1 * scale
                                     }
                                     
                                     // Do something with your image.
@@ -224,29 +225,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 }
                 
                 downloadPicTask.resume()
-            }else
+            }else if(modelExtensions.contains(String(self.payload.characters.suffix(3))))
             {
                 // not a png jpg or gif
-                print("Movie URL: \(String(describing: imageURL))")
                 
-                // Create a 3D Cup to display
-                if let url = URL.init(string: "https://cloud.box.com/shared/static/ock9d81kakj91dz1x4ea.obj") {
-                    let asset = MDLAsset(url: url)
-                    print(asset)
-                    let object = asset.object(at: 0)
-                    print(object)
-                    let modelNode = SCNNode(mdlObject: object)
-                    modelNode.name = self.payload
-                    scene.rootNode.addChildNode(modelNode)
-                }
-                /*
-                 guard let virtualObjectScene = SCNScene(named: "cup.scn", inDirectory: "Models.scnassets/cup") else {
+                print("is not a 2d image")
+                
+                let name: String = self.payload
+                let endIndex = name.index(name.endIndex, offsetBy: -4)
+                let truncated = name.substring(to: endIndex)
+                
+                 guard let objectScene = SCNScene(named: name, inDirectory: "art.scnassets/"+truncated) else {
                  return nil
-                 }*/
+                 }
+
                 
-                //   let wrapperNode = SCNNode()
-                
-                for child in scene.rootNode.childNodes {
+                for child in objectScene.rootNode.childNodes {
                     child.geometry?.firstMaterial?.lightingModel = .physicallyBased
                     child.movabilityHint = .movable
                     wrapperNode.addChildNode(child)
@@ -309,40 +303,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         present(alertPrompt, animated: true, completion: nil)
     }
     
-    /*
-     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-     guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-     return
-     }
-     
-     imgView.image = image
-     
-     // We use document directory to place our cloned image
-     let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-     
-     // Set static name, so everytime image is cloned, it will be named "temp", thus rewrite the last "temp" image.
-     // *Don't worry it won't be shown in Photos app.
-     let imageName = "temp"
-     let imagePath = documentDirectory.stringByAppendingPathComponent(imageName)
-     
-     // Encode this image into JPEG. *You can add conditional based on filetype, to encode into JPEG or PNG
-     if let data = UIImageJPEGRepresentation(image, 80) {
-     // Save cloned image into document directory
-     data.writeToFile(imagePath, atomically: true)
-     }
-     
-     // Save it's path
-     localPath = imagePath
-     
-     dismissViewControllerAnimated(true, completion: {
-     
-     })
-     }
-     
-     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-     dismissViewControllerAnimated(true, completion: nil)
-     }
-     */
+
     
 }
 
