@@ -88,10 +88,10 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LrR-ms-YOr">
-                                        <rect key="frame" x="255" y="126" width="285" height="285"/>
+                                        <rect key="frame" x="8" y="126" width="319" height="285"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="285" id="EWh-xw-7QS"/>
-                                            <constraint firstAttribute="height" constant="285" id="zQ7-B0-dpQ"/>
+                                            <constraint firstAttribute="width" constant="319" id="JDD-wm-hiT"/>
+                                            <constraint firstAttribute="height" constant="285" id="g5z-qo-6QW"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -99,14 +99,14 @@
                                 <constraints>
                                     <constraint firstItem="zab-66-JTI" firstAttribute="top" secondItem="0O0-2E-8Jk" secondAttribute="bottom" constant="8" id="2wS-p8-NGu"/>
                                     <constraint firstItem="0O0-2E-8Jk" firstAttribute="top" secondItem="1hN-mt-YyS" secondAttribute="top" constant="8" id="BV2-3R-fNf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LrR-ms-YOr" secondAttribute="bottom" constant="8" id="FzM-R4-iij"/>
                                     <constraint firstAttribute="height" constant="419" id="Kqv-gN-3yi"/>
                                     <constraint firstItem="0O0-2E-8Jk" firstAttribute="leading" secondItem="1hN-mt-YyS" secondAttribute="leading" constant="8" id="PJg-15-vic"/>
+                                    <constraint firstItem="LrR-ms-YOr" firstAttribute="leading" secondItem="1hN-mt-YyS" secondAttribute="leading" constant="8" id="R2B-oD-Zec"/>
                                     <constraint firstAttribute="trailing" secondItem="zab-66-JTI" secondAttribute="trailing" constant="8" id="X47-fy-g59"/>
-                                    <constraint firstAttribute="bottom" secondItem="LrR-ms-YOr" secondAttribute="bottom" constant="8" id="Xk4-OK-D0f"/>
-                                    <constraint firstItem="LrR-ms-YOr" firstAttribute="leading" secondItem="1hN-mt-YyS" secondAttribute="leading" constant="255" id="YJ3-40-vOx"/>
                                     <constraint firstAttribute="trailing" secondItem="0O0-2E-8Jk" secondAttribute="trailing" constant="8" id="bgq-MU-Bwe"/>
                                     <constraint firstItem="zab-66-JTI" firstAttribute="leading" secondItem="1hN-mt-YyS" secondAttribute="leading" constant="8" id="dF7-t6-ZRW"/>
-                                    <constraint firstItem="LrR-ms-YOr" firstAttribute="top" secondItem="zab-66-JTI" secondAttribute="bottom" constant="8" id="oLf-ty-beg"/>
+                                    <constraint firstItem="LrR-ms-YOr" firstAttribute="top" secondItem="zab-66-JTI" secondAttribute="bottom" constant="8" id="xFc-3k-dWC"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paste Link and Generate!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ll-ZH-E8r">
@@ -149,7 +149,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-0K-U5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="ZCy-2f-o0U"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="690"/>
+            <point key="canvasLocation" x="-117.59999999999999" y="689.5052473763119"/>
         </scene>
         <!--Login Screen Controller-->
         <scene sceneID="xtt-kF-1KA">
