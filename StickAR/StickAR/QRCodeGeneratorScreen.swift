@@ -54,6 +54,7 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var txtLink: UITextField!
     @IBOutlet weak var generateBtn: UIButton!
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var galleryBtn: UIButton!
     
     @IBAction func generateQRCode(_ sender: Any) {
         func generateQRCode(from string: String) -> UIImage? {
@@ -84,6 +85,9 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
         
         generateBtn.layer.cornerRadius = 20
         generateBtn.clipsToBounds = true
+        
+        galleryBtn.layer.cornerRadius = 20
+        galleryBtn.clipsToBounds = true
         
         // Do any additional setup after loading the view.
     }
