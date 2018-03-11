@@ -29,9 +29,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Set the session's delegate
         sceneView.session.delegate = self
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,8 +50,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-    
-    // MARK: - ARSessionDelegate
     
     public func session(_ session: ARSession, didUpdate frame: ARFrame) {
         
@@ -93,16 +88,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                     print(hitTestResults)
                     // If we have a result, process it
                     if let hitTestResult = hitTestResults.first {
-                        //print(self.payload)
                             if(!self.payloadList.contains(self.payload)){
-                            //print("anchor created")
                             // Create an anchor. The node will be created in delegate methods
                             self.detectedDataAnchor = ARAnchor(transform: hitTestResult.worldTransform)
                             //print(self.detectedDataAnchor)
                             self.sceneView.session.add(anchor: self.detectedDataAnchor!)
                             }
-                            
-
                         
                     }
                     
@@ -134,11 +125,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         }
     }
     
-    // MARK: - ARSCNViewDelegate
-    
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        print("rendering")
-        // If this is our anchor, create a node
         if self.detectedDataAnchor?.identifier == anchor.identifier {
             let scene = SCNScene()
             let wrapperNode = SCNNode()
@@ -147,18 +134,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             var width: CGFloat = 0
             let imageExtensions = ["png", "jpg", "jpeg", "gif"]
             let modelExtensions = ["dae", "DAE", "scn"]
-            //...
             // Iterate & match the URL objects from your checking results
             let imageURL = URL(string: self.payload)
             let pathExtension = imageURL?.pathExtension
             if imageExtensions.contains(pathExtension!)
             {
-                // It is a 2d image
-                // Creating a session object with the default configuration.
-                // You can read more about it here https://developer.apple.com/reference/foundation/urlsessionconfiguration
                 let session = URLSession(configuration: .default)
                 
-                // Define a download task. The download task will download the contents of the URL as a Data object and then you can do what you wish with that data.
                 let downloadPicTask = session.dataTask(with: imageURL!) { (data, response, error) in
                     // The download has finished.
                     if let e = error {
@@ -169,7 +151,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                         if let res = response as? HTTPURLResponse {
                             print("Downloaded picture with response code \(res.statusCode)")
                             if let imageData = data {
-                                // Finally convert that Data into an image and do what you wish with it.
                                 if let image = UIImage(data: imageData){
                                     if(image.size.width < image.size.height) {
                                         scale = image.size.width/image.size.height
@@ -180,9 +161,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                                         width = 0.1
                                         height = 0.1 * scale
                                     }
-                                    
-                                    // Do something with your image.
-                                    
                                     
                                     let box = SCNBox(width: width, height: height, length: 0.001, chamferRadius: 0)
                                     let material = SCNMaterial()
@@ -202,7 +180,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                                     // Set its position based off the anchor
                                     wrapperNode.transform = SCNMatrix4(anchor.transform)
                                 }
-                                //                       return wrapperNode
+
                             } else {
                                 print("Couldn't get image: Image is nil")
                             }
@@ -216,9 +194,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             }else if(modelExtensions.contains(String(self.payload.characters.suffix(3))))
             {
                 // not a png jpg or gif
-                
-                print("is not a 2d image")
-                
                 let name: String = self.payload
                 let endIndex = name.index(name.endIndex, offsetBy: -4)
                 let truncated = name.substring(to: endIndex)
@@ -226,7 +201,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                  guard let objectScene = SCNScene(named: name, inDirectory: "art.scnassets/"+truncated) else {
                  return nil
                  }
-
                 
                 for child in objectScene.rootNode.childNodes {
                     child.geometry?.firstMaterial?.lightingModel = .physicallyBased
@@ -240,9 +214,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             }
             
             self.payloadList.append(self.payload)
-            
-            
-            
+
             return wrapperNode
             
         }
@@ -285,14 +257,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 }
             }
             
-            //self.sceneView.session.pause()
             self.payloadList.removeAll()
             let configuration = ARWorldTrackingConfiguration()
             configuration.planeDetection = .horizontal
             self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             
         })
-        
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
         
