@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate  {
     
 //    @IBOutlet weak var btnCard: UIButton!
     
@@ -55,6 +55,7 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var generateBtn: UIButton!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var galleryBtn: UIButton!
+
     
     @IBAction func generateQRCode(_ sender: Any) {
         func generateQRCode(from string: String) -> UIImage? {
@@ -78,6 +79,8 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtLink.delegate = self
+        
         txtLink.layer.borderWidth = 1
         txtLink.layer.borderColor = UIColor.white.cgColor
         txtLink.layer.cornerRadius = 20
@@ -97,7 +100,11 @@ class QRCodeGeneratorScreen: UIViewController, UINavigationControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
