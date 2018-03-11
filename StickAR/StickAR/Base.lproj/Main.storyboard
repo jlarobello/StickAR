@@ -258,11 +258,11 @@
                                 <rect key="frame" x="0.0" y="64" width="404" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mario-luigi-yoschi-figures-163036" translatesAutoresizingMaskIntoConstraints="NO" id="oSC-kM-bAr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen_Shot_2018-03-10_at_13.31.08" translatesAutoresizingMaskIntoConstraints="NO" id="oSC-kM-bAr">
                                 <rect key="frame" x="401" y="64" width="433" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen_Shot_2018-03-10_at_13.46.41" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-Rz-i1a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WoodPlanksBare0002_1_S.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-Rz-i1a">
                                 <rect key="frame" x="401" y="351" width="433" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -278,11 +278,11 @@
                                 <rect key="frame" x="-14" y="638" width="418" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FE5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8Cc-cR-OxZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walle" translatesAutoresizingMaskIntoConstraints="NO" id="8Cc-cR-OxZ">
                                 <rect key="frame" x="401" y="925" width="433" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen_Shot_2018-03-10_at_13.31.08" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-l5-xAa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mario-luigi-yoschi-figures-163036" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-l5-xAa">
                                 <rect key="frame" x="-14" y="925" width="418" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -316,15 +316,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FE5.jpg" width="1024" height="1280"/>
         <image name="Screen_Shot_2018-03-10_at_13.31.08" width="442" height="442"/>
         <image name="Screen_Shot_2018-03-10_at_13.35.39" width="958" height="766"/>
-        <image name="Screen_Shot_2018-03-10_at_13.46.41" width="1634" height="1122"/>
         <image name="Screen_Shot_2018-03-10_at_13.49.04" width="1640" height="876"/>
         <image name="Screen_Shot_2018-03-10_at_13.50.46" width="1296" height="968"/>
+        <image name="WoodPlanksBare0002_1_S.jpg" width="640" height="640"/>
         <image name="colored_pencils" width="1920" height="1440"/>
         <image name="computer_with_stickers_blur" width="2000" height="1330"/>
         <image name="mario-luigi-yoschi-figures-163036" width="1280" height="624"/>
+        <image name="walle" width="1280" height="853"/>
         <image name="yoschi-fig-funny-colorful-160822" width="1280" height="824"/>
     </resources>
 </document>
